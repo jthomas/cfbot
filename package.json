@@ -1,0 +1,16 @@
+{
+  "name": "cfbot",
+  "version": "0.1.0",
+  "description": "Cloud Foundry Slackbot",
+  "main": "index.js",
+  "dependencies": {
+    "cf-nodejs-client": "^0.10.0",
+    "slack-client": "^1.4.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "James Thomas <james@jamesthom.as>",
+  "license": "MIT"
+}
