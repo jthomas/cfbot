@@ -3,13 +3,16 @@
   "version": "0.1.0",
   "description": "Cloud Foundry Slackbot",
   "main": "index.js",
+  "engines" : { "node" : ">=4.0.0" },
   "dependencies": {
     "cf-nodejs-client": "^0.10.0",
+    "cfenv": "^1.0.3",
     "slack-client": "^1.4.1"
   },
   "devDependencies": {},
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
   },
   "author": "James Thomas <james@jamesthom.as>",
   "license": "MIT"

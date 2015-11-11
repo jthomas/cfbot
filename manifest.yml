@@ -1,0 +1,7 @@
+---
+applications:
+- name: cfbot
+  memory: 256M
+  no-route: true
+  services:
+  - cfbot
