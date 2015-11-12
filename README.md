@@ -3,16 +3,12 @@
 [Cloud Foundry](http://cloudfoundry.org) application monitoring bot for
 [Slack](https://slack.com).
 
+![cfbot](https://dl.dropboxusercontent.com/u/10404736/cfbot.png)
+
 cfbot monitors application events through the 
 [CF events API](https://apidocs.cloudfoundry.org/224/events/list_all_events.html) and forwards
 details to channels it's registered in. Users can configure the applications
 and events being monitored.
-
-<a href="https://bluemix.net/deploy?repository=https://github.com/jthomas/cfbot" target="_blank">
-<img src="http://bluemix.net/deploy/button.png" alt="Bluemix button" />
-</a>
-
-PICTURE
 
 ## install 
 
@@ -53,6 +49,11 @@ for monitoring, rather than having to use normal user accounts.*
 
 ### deploy 
 
+<a href="https://bluemix.net/deploy?repository=https://github.com/jthomas/cfbot" target="_blank">
+<img src="http://bluemix.net/deploy/button.png" alt="Bluemix button" />
+</a>
+
+or... 
 <pre>
 $ cf push
 </pre>
