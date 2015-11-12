@@ -3,17 +3,10 @@
 [Cloud Foundry](http://cloudfoundry.org) application monitoring bot for
 [Slack](https://slack.com).
 
-cfbot monitors application events through the [CF events API] and forwards
+cfbot monitors application events through the 
+[CF events API](https://apidocs.cloudfoundry.org/224/events/list_all_events.html) and forwards
 details to channels it's registered in. Users can configure the applications
 and events being monitored.
-
-The following events are currently registered:
-
-* App Creation and Deletion Events.
-* App Lifecycle Events (start, stop, restart, restage)
-* Instance Crash Events. 
-* Scaling (memory, CPU, disk)
-* Routes Changes (map, unmap)
 
 <a href="https://bluemix.net/deploy?repository=https://github.com/jthomas/cfbot" target="_blank">
 <img src="http://bluemix.net/deploy/button.png" alt="Bluemix button" />
@@ -30,8 +23,6 @@ authentication token. This token, along with login details for
 a platform account, need to be created as user-provided service credentials.
 The bot will read these service credentials on deployment and start monitoring
 for events.
-
-Follow the steps below for details...
 
 ### register slack bot 
 
@@ -53,12 +44,12 @@ You need to provide the API token from Slack, the Cloud Foundry endpoint running
 the applications you want to monitor and user account credentials for that
 platform. 
 
-*tip: create a new user account for cfbot and add it to your cf organisation to expose applications 
-for monitoring, rather than having to use normal user accounts.*
-
 <pre>
 cf cups cfbot -p '{"slack_token":"xoxb-some-token","cf_api":"https://api.ng.bluemix.net", "cf_username":"xxx", "cf_password":"xxx"}'
 </pre>
+
+*tip: create a new user account for cfbot and add it to your cf organisation to expose applications 
+for monitoring, rather than having to use normal user accounts.*
 
 ### deploy 
 
@@ -87,6 +78,15 @@ to matching all events.
 
 @cf status // show the current bot status message
 </pre>
+
+The following events are currently registered:
+
+* _App Creation and Deletion Events._
+* _App Lifecycle Events (start, stop, restart, restage)_
+* _Instance Crash Events._
+* _Scaling (memory, CPU, disk)_
+* _Routes Changes (map, unmap)_
+ 
 
 # bugs / feedback / comments
 
