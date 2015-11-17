@@ -6,8 +6,17 @@ describe('EventFilter', function () {
     it('should match everything by default', function () {
       var event = { attribute: 'property' }
       var event_filter = new EventFilter("attribute")
-      assert.ok(event_filter.match(event.attribute))
+      assert.ok(event_filter.match(event))
       assert.ok(event_filter.match(null))
+    });
+    it('should match filters from constructor', function () {
+      var events = [{ attribute: 'a' }, { attribute: 'b' },{ attribute: 'c' }]
+      var non_matching_event = { attribute: 'property' }
+      var event_filter = new EventFilter("attribute", ['a', 'b', 'c'])
+      assert.ok(event_filter.match(events[0]))
+      assert.ok(event_filter.match(events[1]))
+      assert.ok(event_filter.match(events[2]))
+      assert.ok(!event_filter.match(non_matching_event))
     });
     it('should match filters instead of wildcard', function () {
       var event = { attribute: 'property' }

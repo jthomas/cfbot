@@ -88,8 +88,18 @@ The following events are currently registered:
 * _Scaling (memory, CPU, disk)_
 * _Routes Changes (map, unmap)_
  
+## config
 
-# bugs / feedback / comments
+Environment variables (APPS and EVENTS) can be used to configure default event property filtering for
+application names and event types (use spaces to separate multiple terms).
+
+<pre>
+env: 
+  APPS: my_app your_app another_app
+  EVENTS: app.create app.update
+</pre>
+
+## bugs / feedback / comments
 
 Open [issues](https://github.com/jthomas/cfbot/issues) or find me on [twitter](http://twitter.com/thomasj).
 Pull requests welcome!
