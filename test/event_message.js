@@ -36,7 +36,7 @@ describe('EventMessage', function () {
       assert.ok(messages[1].indexOf(event.metadata.request.instances) != -1)
     })
     it('should handle app crash messages', function () {
-      var event = {type: 'audit.crash', metadata: {index: 99, exit_description: 'sample description'}}
+      var event = {type: 'app.crash', metadata: {index: 99, exit_description: 'sample description'}}
       var messages = EventMessage(event)
       assert.equal(2, messages.length)
       assert.ok(messages[1].indexOf(event.metadata.index) != -1)
