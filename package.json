@@ -14,6 +14,7 @@
     "url": "https://github.com/IBM-Bluemix/oneoff"
   },
   "dependencies": {
+    "bluebird": "^3.0.6",
     "cf-nodejs-client": "github:prosociallearneu/cf-nodejs-client#b9c6a71",
     "cfenv": "^1.0.3",
     "slack-client": "^1.4.1",

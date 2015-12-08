@@ -11,9 +11,15 @@ if (process.env.APPS) {
   config.apps = process.env.APPS.split(' ')
   winston.info(`Configuration environment, APPS, defined: ${config.apps}`)
 }
+
 if (process.env.EVENTS) {
   config.events = process.env.EVENTS.split(' ')
   winston.info(`Configuration environment, EVENTS, defined: ${config.events}`)
+}
+
+if (process.env.POLLING_FREQ) {
+  config.polling_frequency = process.env.POLLING_FREQ
+  winston.info(`Configuration environment, POLLING_FREQ, defined: ${config.polling_frequency}`)
 }
 
 winston.level = process.env.LOG_LEVEL || 'info'

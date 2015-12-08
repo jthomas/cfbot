@@ -16,6 +16,29 @@ describe('EventsMonitor', function () {
       events_monitor.events = null
       events_monitor.poll()
     })
+    it('should support default poll frequency', function () {
+      assert.equal(events_monitor.polling_frequency, 60 * 1000)
+    })
+    it('should support setting polling frequency', function () {
+      events_monitor = new EventsMonitor(endpoint, creds, 30)
+      assert.equal(events_monitor.polling_frequency, 30 * 1000)
+    })
+    it('should support polling frequency rate-limiting', function (done) {
+      this.timeout(5000)
+      events_monitor = new EventsMonitor(endpoint, creds, 2)
+      var timestamp
+      events_monitor.events.getEvents = (() => {
+        if (!timestamp) { 
+          timestamp = new Date()
+          return new promise((resolve) => { resolve({resources: []}) })
+        } else {
+          let difference = new Date() - timestamp
+          assert.ok(difference > events_monitor.polling_frequency)
+          done()
+        } 
+      })
+      events_monitor.start()
+    })
     it('should pass credentials to event service', function () {
       var called = false
       var getEvents = function (type, token) { 

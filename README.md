@@ -78,6 +78,9 @@ to matching all events.
 @cf events * // reset to the filter to wildcard matching
 
 @cf status // show the current bot status message
+
+@cf polling_frequency // show the cf events api polling time in seconds
+@cf polling_frequency 10 // set the cf events api polling time in seconds
 </pre>
 
 The following events are currently registered:
@@ -92,11 +95,14 @@ The following events are currently registered:
 
 Environment variables (APPS and EVENTS) can be used to configure default event property filtering for
 application names and event types (use spaces to separate multiple terms).
+POLLING_FREQ can be defined to configure the default CF events api polling
+frequency.
 
 <pre>
 env: 
   APPS: my_app your_app another_app
   EVENTS: app.create app.update
+  POLLING_FREQ: 30
 </pre>
 
 ## bugs / feedback / comments
