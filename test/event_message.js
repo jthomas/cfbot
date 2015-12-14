@@ -47,6 +47,11 @@ describe('EventMessage', function () {
       var messages = EventMessage(event)
       assert.equal(2, messages.length)
     })
+    it('should handle app restage messages', function () {
+      var event = {type: 'audit.app.restage'}
+      var messages = EventMessage(event)
+      assert.equal(2, messages.length)
+    })
     it('should handle app delete messages', function () {
       var event = {type: 'audit.app.delete-request'}
       var messages = EventMessage(event)
@@ -57,6 +62,16 @@ describe('EventMessage', function () {
       var messages = EventMessage(event)
       assert.equal(2, messages.length)
       assert.ok(messages[1].indexOf(event.metadata.route_guid) != -1)
+    })
+    it('should handle service creation messages', function () {
+      var event = {type: 'audit.service_instance.create'}
+      var messages = EventMessage(event)
+      assert.equal(2, messages.length)
+    })
+    it('should handle service deletion messages', function () {
+      var event = {type: 'audit.service_instance.delete'}
+      var messages = EventMessage(event)
+      assert.equal(2, messages.length)
     })
   })
 })

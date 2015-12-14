@@ -15,7 +15,7 @@
   },
   "dependencies": {
     "bluebird": "^3.0.6",
-    "cf-nodejs-client": "github:prosociallearneu/cf-nodejs-client#b9c6a71",
+    "cf-nodejs-client": "github:jthomas/cf-nodejs-client",
     "cfenv": "^1.0.3",
     "slack-client": "^1.4.1",
     "winston": "^2.1.0"
