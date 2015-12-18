@@ -58,15 +58,16 @@ describe('EventMessage', function () {
       assert.equal(2, messages.length)
     })
     it('should handle app map-route messages', function () {
-      var event = {type: 'audit.app.map-route', metadata: {route_guid: '0123456789'}}
+      var event = {type: 'audit.app.map-route', metadata: {route: '0123456789'}}
       var messages = EventMessage(event)
       assert.equal(2, messages.length)
-      assert.ok(messages[1].indexOf(event.metadata.route_guid) != -1)
+      assert.ok(messages[1].indexOf(event.metadata.route) != -1)
     })
     it('should handle service creation messages', function () {
-      var event = {type: 'audit.service_instance.create'}
+      var event = {type: 'audit.service_instance.create', metadata: {request: {name: 'james'}}}
       var messages = EventMessage(event)
       assert.equal(2, messages.length)
+      assert.ok(messages[1].indexOf(event.metadata.request.name) != -1)
     })
     it('should handle service deletion messages', function () {
       var event = {type: 'audit.service_instance.delete'}

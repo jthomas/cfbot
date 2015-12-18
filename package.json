@@ -1,6 +1,6 @@
 {
   "name": "cfbot",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Cloud Foundry Slackbot",
   "main": "index.js",
   "engines": {
@@ -11,11 +11,11 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/IBM-Bluemix/oneoff"
+    "url": "https://github.com/jthomas/cfbot"
   },
   "dependencies": {
     "bluebird": "^3.0.6",
-    "cf-nodejs-client": "github:jthomas/cf-nodejs-client",
+    "cf-nodejs-client": "github:prosociallearnEU/cf-nodejs-client",
     "cfenv": "^1.0.3",
     "slack-client": "^1.4.1",
     "winston": "^2.1.0"

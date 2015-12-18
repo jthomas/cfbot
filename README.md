@@ -88,6 +88,7 @@ The following events are currently registered:
 * _App Creation and Deletion Events._
 * _App Lifecycle Events (start, stop, restart, restage)_
 * _Instance Crash Events._
+* _Service Creation, Deleting and Binding.
 * _Scaling (memory, CPU, disk)_
 * _Routes Changes (map, unmap)_
  
