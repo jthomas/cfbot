@@ -3,7 +3,7 @@
 [Cloud Foundry](http://cloudfoundry.org) application monitoring bot for
 [Slack](https://slack.com).
 
-![cfbot](https://dl.dropboxusercontent.com/u/10404736/cfbot.png)
+![cfbot](http://jamesthom.as/images/cfbot-events.png)
 
 cfbot monitors application events through the 
 [CF events API](https://apidocs.cloudfoundry.org/224/events/list_all_events.html) and forwards
