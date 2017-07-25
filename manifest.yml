@@ -3,5 +3,6 @@ applications:
 - name: cfbot
   memory: 256M
   no-route: true
+  health-check-type: process
   services:
   - cfbot
